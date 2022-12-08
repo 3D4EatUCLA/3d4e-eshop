@@ -1,0 +1,38 @@
+.nav-bar {
+    padding: 1rem;
+    height: 8vh;
+    left: 0;
+    right: 0;
+    background-color: rgba(2, 33, 68, 1);
+    display: grid;
+    grid-template-columns: 2fr 0.5fr 5fr 0.5fr 2fr;
+    align-items: center;
+}
+
+.club-logo {
+    position: absolute;
+    left: 0;
+    padding: 1rem;
+}
+
+.category-selection {
+    grid-column-start: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    column-gap: 1.5em;
+}
+
+.club-info {
+    grid-column-start: 5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    column-gap: 1.5em;
+}
+
+.nav-text {
+    color: darkorange;
+}
