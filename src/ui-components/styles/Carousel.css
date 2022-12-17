@@ -1,0 +1,65 @@
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-img {
+    width: 100%;
+}
+
+.transition-right {
+    animation: fadeinRight 0.5s ease-in-out;
+}
+
+.transition-left {
+    animation: fadeinLeft 0.5s ease-in-out;
+}
+
+@keyframes fadeinRight {
+    0% {
+        transform: scale(0.98);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeinLeft {
+    0% {
+        transform: scale(0.98);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.prev-img {
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+    height: 50px;
+}
+
+.next-img {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    height: 50px;
+}
+
+.carousel-select {
+    position: absolute;
+    display: flex;
+    gap: 1rem;
+    left: 50%;
+    bottom: 0.5rem;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
