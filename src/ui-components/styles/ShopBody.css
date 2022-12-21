@@ -1,4 +1,21 @@
 .listing-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+}
+.our-favorites {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(46, 45, 45, 1);
+    padding: 2%;
+}
+.favorite-listings {
+    justify-self: end;
+}
+
+.favorite-listings:hover {
+    transform: scale(1.05);
 }

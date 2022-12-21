@@ -8,49 +8,31 @@ const Carousel = ({ imgArray }) => {
 
   const [currImgIndex, setImgIndex] = useState(-1);
   const [currImg, setImg] = useState(noImg);
-  const [transition, setTransition] = useState("");
+  const [transition, setTransition] = useState('');
   const [autoScroll, setScroll] = useState(true);
 
   const scroll = () => {
-    if (autoScroll) {
-      if (currImgIndex < 0) {
-        return;
-      }
-      else if (currImgIndex + 1 < imgArray.length) {
-        setTimeout(() => {
-          if (autoScroll) {
-            setTransition("transition-left");
-            setImgIndex(currImgIndex + 1);
-            setTimeout(() => {
-              if (autoScroll) {
-                setTransition("");
-              }
-            }, 500);
-          }
-        }, 4000);
-      }
-      else {
-        setTimeout(() => {
-          if (autoScroll) {
-            setTransition("transition-left");
-            setImgIndex(0);
-            setTimeout(() => {
-              if (autoScroll) {
-                setTransition("");
-              }
-            }, 500);
-          }
-        }, 4000);
-      }
-
+    if (currImgIndex < 0) {
+      return;
     }
+    else if (currImgIndex + 1 < imgArray.length) {
+      setImgIndex(currImgIndex + 1);
+    }
+    else {
+      setImgIndex(0);
+    }
+    transit('left');
+    setScroll(false);
+    setTimeout(() => setScroll(true), 6000);
   };
 
   useEffect(() => {
     if (imgArray != null && currImgIndex < 0) {
       setImgIndex(0);
     }
-    scroll();
+    if (autoScroll) {
+      scroll();
+    }
     if (currImgIndex >= 0 && currImgIndex < imgArray.length) {
       setImg(imgArray[currImgIndex].url);
     }
@@ -67,9 +49,6 @@ const Carousel = ({ imgArray }) => {
     else {
       setImgIndex(0);
     }
-    setTimeout(() => {
-      setScroll(true);
-    }, 4700);
   };
 
   const carouselPrev = () => {
@@ -83,10 +62,14 @@ const Carousel = ({ imgArray }) => {
     else {
       setImgIndex(imgArray.length - 1);
     }
-    setTimeout(() => {
-      setScroll(true);
-    }, 4700);
   };
+
+  const setCarousel = (index) => {
+    setScroll(false);
+    if (index < imgArray.length && index >= 0) {
+      setImgIndex(index);
+    }
+  }
 
   const transit = (direction) => {
     setTransition("transition-" + direction);
@@ -95,7 +78,7 @@ const Carousel = ({ imgArray }) => {
     }, 500);
   };
 
-  const selectDots = imgArray.map((img, imgIndex) => (<div className='select-dot' key={imgIndex}>⚪</div>));
+  const selectDots = imgArray.map((img, imgIndex) => (<div className='select-dot' key={imgIndex} onClick={() => { transit('left'); setCarousel(imgIndex); }}>⚪</div>));
 
   return (
     <div className='carousel'>
