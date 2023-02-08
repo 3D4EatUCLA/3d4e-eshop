@@ -18,11 +18,21 @@ const ShopBody = () => {
 
   return (
     <div className='listing-container'>
-      <div className='our-favorites'>
+      <div className='specials our-favorites'>
         <h3 style={{ fontFamily: 'Playfair Display', fontSize: '40px', fontWeight: 'bold', fontStyle: 'italic', color: 'rgba(224, 224, 224, 1)', justifySelf: 'flex-start' }}>Our Favorites</h3>
-        <Listing name={'forklift'} img={ListingImg1} tag={'favorite-listings'} containerStyle={favContainerStl} imgStyle={favImgStl} nameStyle= {favTextStl}/>
-        <Listing name={'hawt skin'} img={ListingImg2} tag={'favorite-listings'} containerStyle={favContainerStl} imgStyle={favImgStl} nameStyle= {favTextStl}/>
-        <Listing name={'hawt skin'} img={ListingImg3} tag={'favorite-listings'} containerStyle={favContainerStl} imgStyle={favImgStl} nameStyle= {favTextStl}/>
+        <Listing name={'forklift'} img={ListingImg1} tag={'favorite-listings'} containerStyle={favContainerStl} imgStyle={favImgStl} nameStyle={favTextStl} />
+        <Listing name={'hawt skin'} img={ListingImg2} tag={'favorite-listings'} containerStyle={favContainerStl} imgStyle={favImgStl} nameStyle={favTextStl} />
+        <Listing name={'hawt skin'} img={ListingImg3} tag={'favorite-listings'} containerStyle={favContainerStl} imgStyle={favImgStl} nameStyle={favTextStl} />
+      </div>
+      <div className='specials new-arrivals'>
+
+        <Listing name={'forklift'} img={ListingImg1} tag={'favorite-listings'} containerStyle={favContainerStl} imgStyle={favImgStl} nameStyle={favTextStl} />
+        <Listing name={'hawt skin'} img={ListingImg2} tag={'favorite-listings'} containerStyle={favContainerStl} imgStyle={favImgStl} nameStyle={favTextStl} />
+        <Listing name={'hawt skin'} img={ListingImg3} tag={'favorite-listings'} containerStyle={favContainerStl} imgStyle={favImgStl} nameStyle={favTextStl} />
+        <h3 style={{ fontFamily: 'Playfair Display', fontSize: '40px', fontWeight: 'bold', fontStyle: 'italic', color: 'rgba(224, 224, 224, 1)', justifySelf: 'flex-start' }}>New Arrivals</h3>
+      </div>
+      <div className='specials explore-all'>
+
       </div>
     </div>
   )

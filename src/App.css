@@ -1,18 +1,21 @@
 .club-logo {
-    position: absolute;
+    position: fixed;
     left: 0;
     padding: 1rem;
-    z-index: 99;
+    z-index: 101;
 }
 
 .nav-container {
+    position: fixed;
     height: fit-content;
     left: 0;
     right: 0;
+    z-index: 100;
+    opacity: 0.9;
 }
 
 .carousel-container {
-    height: 42vh;
+    height: 50vh;
     left: 0;
     right: 0;
     display: flex;
